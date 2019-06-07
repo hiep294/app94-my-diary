@@ -17,7 +17,7 @@ export class TopicProvider extends Component {
             title: '',
             content: ''
           })
-        }, 0)
+        }, 1)
       }, (errors) => {
         setStateForm({
           errors

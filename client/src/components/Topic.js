@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import moment from 'moment'
 import DeleteLaunchModal from './DeleteLaunchModal'
 import EditIcon from '../icons/edit.png'
 import GhimIcon from '../icons/ghim.png'
@@ -6,7 +7,7 @@ import { TopicConsumer } from '../contexts/TopicContext'
 import '../alter.css'
 
 const Main = ({ value, topic }) => {
-  const { _id, title, content } = topic
+  const { _id, title, content, date } = topic
   const { onEdit, editedTopic, onDelete } = value
   useEffect(() => {
     document.getElementById(`topic${_id}`).style.opacity = 1
@@ -25,6 +26,14 @@ const Main = ({ value, topic }) => {
     opacity: editedTopic._id === _id ? 1 : 0
   }
 
+  console.log(topic)
+
+  const dateStyle = {
+    fontSize: '13px',
+    fontStyle: 'italic',
+    color: 'grey'
+  }
+
   return (
     <div id={`topic${_id}`} className="todo-card card card-body website">
       <h5 className="card-title flex-style">
@@ -33,7 +42,7 @@ const Main = ({ value, topic }) => {
       </h5>
       <p className="card-text">{content}</p>
       <div className="flex-style">
-        <div />
+        <div style={dateStyle}>{moment(date).format('MMMM Do YYYY, h:mm:ss a')}</div>
         <div className="icons">
           <DeleteLaunchModal onDelete={onDeleteItem} />
           <img src={EditIcon} alt="" onClick={onEditTopic} />
