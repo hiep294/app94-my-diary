@@ -1,0 +1,47 @@
+.website{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.5s;
+  cursor: default
+}
+
+.flex-style{
+  display: flex;
+  justify-content: space-between
+}
+/* icon style */
+.icons img{
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-left: 13px;
+  width: 15px
+}
+.website:hover .icons img{
+  opacity: 0.3
+}
+.website:hover .icons img:hover{
+  opacity: 1
+}
+/* close icon style */
+
+.form-icon{
+  margin-right: 20px;
+}
+
+.icons img:hover{
+  opacity: 1;
+}
+
+.ghim-icon{
+  opacity: 1;
+  transition: opacity 0.5s ease 0s;
+  position: absolute;
+  width: 40px
+}
+
+.card-text{
+  color: #212529
+}
